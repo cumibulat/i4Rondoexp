@@ -13,8 +13,6 @@ export class Tab1Page {
   ) {}
 
   doLogout(){
-    console.log("do logout jalan")
-
     this.authService.logout();
   }
 
