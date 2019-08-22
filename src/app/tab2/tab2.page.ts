@@ -10,6 +10,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class Tab2Page {
   photo: SafeResourceUrl;
+  listShoppingCart: Array<any>;
+  deliveryAddress: string;
 
   constructor(private sanitizer: DomSanitizer) {}
 
@@ -19,9 +21,31 @@ export class Tab2Page {
       allowEditing: false,
       resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera
+    })
+    .catch(()=>{
+      console.log("cancel take photo");
     });
 
     this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+  }
+
+  ionViewWillEnter(){
+    this.listShoppingCart = [
+      {
+        name: "Mangga",
+        qty: "2",
+      },
+      {
+        name: "Jambu",
+        qty: "3",
+      },
+      {
+        name: "Salak",
+        qty: "8",
+      },
+    ];
+
+    this.deliveryAddress = "Kota Kasablanka Office 88. 18th Floor. South Jakarta."
   }
 
 }
