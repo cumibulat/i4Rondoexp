@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { TabsPageModule } from './tabs/tabs.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadingService } from './services/loading.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,11 +21,13 @@ import { TabsPageModule } from './tabs/tabs.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     IonicStorageModule.forRoot(),
-    TabsPageModule
+    TabsPageModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LoadingService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
