@@ -9,6 +9,7 @@
     font-size: 16px;
     font-weight: bold;
     color: var(--ion-color-dark);
+    padding: 8px 10px 8px 10px;
 }
 
 ion-card {
@@ -19,16 +20,35 @@ ion-card {
     border-radius: 0%;
 }
 
-.receiver-location{
+.receiver-location {
     width: 64px;
     height: 64px;
     margin: 0 auto;
 }
-.receiver-name{
+
+.receiver-name {
     font-size: 14px;
     font-weight: bold;
 }
 
-.receiver-info{
+.receiver-info {
+    font-size: 12px;
+}
+
+.product-qty {
+    border: 1px solid var(--ion-color-light-shade);
+    color: var(--ion-color-primary);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+
+}
+
+.product-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-price {
     font-size: 12px;
 }

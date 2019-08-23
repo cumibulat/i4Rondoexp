@@ -34,14 +34,17 @@ export class Tab2Page {
       {
         name: "Mangga",
         qty: "2",
+        price: "3000" 
       },
       {
         name: "Jambu",
         qty: "3",
+        price: "1500" 
       },
       {
         name: "Salak",
         qty: "8",
+        price: "2000" 
       },
     ];
 
