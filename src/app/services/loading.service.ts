@@ -18,26 +18,24 @@ export class LoadingService {
   ) {}
 
   async present() {
-    if(this.isShowing){
+    if (this.isShowing) {
       return
     }
 
     this.isShowing = true
 
-    await this.loadingCtrl.create({spinner: "dots"}).then(re => {
+    await this.loadingCtrl.create({
+      spinner: "dots",
+    }).then(re => {
       re.present()
       console.log("LoadingService presented", re.id)
     })
   }
 
   async dismiss() {
-
-    console.log('test masuk 1')
-    if(this.isShowing){
-      console.log('test masuk 2')
+    if (this.isShowing) {
       await this.loadingCtrl.dismiss().then(res => {
-        console.log('test masuk 3 :: ', res)
-        if(res){
+        if (res) {
           this.isShowing = false
           console.log("LoadingService dismissed", res);
         }

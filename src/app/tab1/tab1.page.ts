@@ -19,7 +19,7 @@ export class Tab1Page {
   ) {}
 
   loadListUser(){
-    this.loadingSvc.present("Loading...");
+    this.loadingSvc.present();
     this.userSvc.getUsers(this.currentPage).subscribe(
       (resp) => {
         this.listUser = resp['data'];
