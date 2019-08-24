@@ -13,6 +13,6 @@ export class UserService {
 
   getUsers(page: number){
     return this.httpClient.get("https://reqres.in/api/users?page=" + page)
-      .pipe(delay(3000));  
+      .pipe(delay(1000));  
   }
 }

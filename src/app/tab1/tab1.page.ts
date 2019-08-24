@@ -9,7 +9,7 @@ import { LoadingService } from '../services/loading.service';
 })
 export class Tab1Page {
 
-  listUser;
+  listUser: Array<any>;
   currentPage: number = 1;
   totalPages: number = 0;
 
@@ -46,6 +46,8 @@ export class Tab1Page {
 
   ionViewDidEnter(){
     this.currentPage = 1;
+    this.totalPages = 0;
+    this.listUser = [];
     this.loadListUser();
   }
 

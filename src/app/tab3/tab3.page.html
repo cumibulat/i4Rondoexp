@@ -7,9 +7,49 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Daftar Transaksi</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3" class="ion-text-center">
+            <ion-img class="personal-icon" src="assets/icon/presentation_64x64.png"></ion-img>
+            <span class="personal-icon-title">Dashboard</span>
+          </ion-col>
+          <ion-col size="3" class="ion-text-center">
+            <ion-img class="personal-icon" src="assets/icon/networking_64x64.png"></ion-img>
+            <span class="personal-icon-title">My Team</span>
+          </ion-col>
+          <ion-col size="3" class="ion-text-center">
+            <ion-img class="personal-icon" src="assets/icon/target_64x64.png"></ion-img>
+            <span class="personal-icon-title">Target</span>
+          </ion-col>
+          <ion-col size="3" class="ion-text-center">
+            <ion-img class="personal-icon" src="assets/icon/performance_64x64.png"></ion-img>
+            <span class="personal-icon-title">History</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item detail>
+      <ion-label>
+        <ion-text>Ulasan</ion-text>
+        <p>Isi Ulasan</p>
+      </ion-label>
+    </ion-item>
+    <ion-item detail>
+      <ion-label>
+        <ion-text>Komplain</ion-text>
+        <p>Status Komplain</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
   <ion-list lines="none">
     <ion-list-header>
-      <ion-label>Resources</ion-label>
+      <ion-label>Favorit Saya</ion-label>
     </ion-list-header>
     <ion-item (click)="doLogout()">
       <ion-icon slot="start" color="medium" name="log-out"></ion-icon>
