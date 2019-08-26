@@ -3,12 +3,16 @@
     <ion-title>
       List User
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/user-detail', 0]">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let user of listUser" 
-    [routerLink]="['/user-detail', user.id]">
+  <ion-card *ngFor="let user of listUser" [routerLink]="['/user-detail', user.id]">
     <ion-img src="{{user.avatar}}"></ion-img>
     <ion-card-header>
       <ion-card-subtitle>{{user.last_name}}, {{user.first_name}}</ion-card-subtitle>
@@ -23,6 +27,6 @@
     <ion-button size="small" (click)="goPreviousPage()" [disabled]="currentPage <= 1">Previous</ion-button>
     <ion-button size="small" (click)="goNextPage()" [disabled]="currentPage == totalPages">Next</ion-button>
   </div>
-  
+
 
 </ion-content>
