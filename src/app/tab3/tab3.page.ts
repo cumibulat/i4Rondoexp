@@ -14,6 +14,14 @@ export class Tab3Page {
     
   }
 
+  goToUlasan(){
+    console.log('masuk ulasan')
+  }
+
+  goToKomplain(){
+    console.log('masuk komplain')
+  }
+
   doLogout(){
     this.authService.logout();
   }

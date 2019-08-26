@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>User Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-item lines="full" class="custom-ion-item">
+    <ion-avatar class="user-avatar">
+      <img src="https://www.w3schools.com/howto/img_avatar2.png">
+    </ion-avatar>
+
+  </ion-item>
+  <ion-item lines="full" text-center>
+    <ion-label class="user-name">
+      {{userDetail.first_name}} {{userDetail.last_name}}
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">Email</ion-col>
+        <ion-col size="9" class="ion-text-right">{{userDetail.email}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">ID.</ion-col>
+        <ion-col size="9" class="ion-text-right">{{userDetail.id}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <div class="subsection-title">Profile Information</div>
+  <ion-card class="card-custom">
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">Mobile No.</ion-col>
+          <ion-col size="9" class="ion-text-right">+62899 8765 123</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3">KTP No.</ion-col>
+          <ion-col size="9" class="ion-text-right">3173 1232 4567 12</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+
+  <div class="subsection-title">Personal Details</div>
+  <ion-card class="card-custom">
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>Your NPWP</ion-col>
+          <ion-col class="ion-text-right">Uploaded</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Your Kartu Keluarga</ion-col>
+          <ion-col class="ion-text-right">Uploaded</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

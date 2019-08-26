@@ -15,4 +15,10 @@ export class UserService {
     return this.httpClient.get("https://reqres.in/api/users?page=" + page)
       .pipe(delay(1000));  
   }
+
+  getUserDetail(id: number){
+    return this.httpClient.get("https://reqres.in/api/users/" + id)
+      .pipe(delay(1000));  
+  }
+
 }

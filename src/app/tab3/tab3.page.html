@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Tab Three
+      Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -33,13 +33,13 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-    <ion-item detail>
+    <ion-item detail (click)="goToUlasan()">
       <ion-label>
         <ion-text>Ulasan</ion-text>
         <p>Isi Ulasan</p>
       </ion-label>
     </ion-item>
-    <ion-item detail>
+    <ion-item detail (click)="goToKomplain()">
       <ion-label>
         <ion-text>Komplain</ion-text>
         <p>Status Komplain</p>

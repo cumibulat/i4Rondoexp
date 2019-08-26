@@ -45,6 +45,15 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'user-detail/:id', 
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../user-detail/user-detail.module').then(m => m.UserDetailPageModule)
+      }
+    ]
+  },
   {
     path: '',
     redirectTo: '/tabs/tab1',
