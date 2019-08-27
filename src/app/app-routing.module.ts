@@ -6,6 +6,7 @@ import { TabsPage } from './tabs/tabs.page';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   {
     path: 'tabs',
     component: TabsPage,
