@@ -21,4 +21,14 @@ export class UserService {
       .pipe(delay(1000));  
   }
 
+  createUser(formData: any){
+    return this.httpClient.post("https://reqres.in/api/users/", formData)
+      .pipe(delay(1000));  
+  }
+
+  updateUser(id:number, formData: any){
+    return this.httpClient.put("https://reqres.in/api/users/" + id, formData)
+      .pipe(delay(1000));  
+  }
+
 }

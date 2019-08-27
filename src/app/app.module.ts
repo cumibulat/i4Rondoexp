@@ -12,6 +12,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { TabsPageModule } from './tabs/tabs.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingService } from './services/loading.service';
+import { PopupnotifService } from './services/popupnotif.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { LoadingService } from './services/loading.service';
     StatusBar,
     SplashScreen,
     LoadingService,
+    PopupnotifService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
