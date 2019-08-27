@@ -64,12 +64,12 @@ export class RegisterPage implements OnInit {
 
     if (!this.slideOneForm.valid) {
       this.signupSlider.slideTo(0);
-    } else if (!this.slideTwoForm.valid) {
-      this.signupSlider.slideTo(1);
+    // } else if (!this.slideTwoForm.valid) {
+    //   this.signupSlider.slideTo(1);
     } else {
       console.log("success!")
       console.log(this.slideOneForm.value);
-      console.log(this.slideTwoForm.value);
+      // console.log(this.slideTwoForm.value);
     }
   }
 
