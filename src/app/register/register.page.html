@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Register</ion-title>
-    <ion-buttons slot="start">
+    <!-- <ion-buttons slot="start">
       <ion-button (click)="prev()">
         <ion-icon slot="start" name="arrow-back"></ion-icon> Prev
       </ion-button>
@@ -9,7 +9,7 @@
     <ion-buttons slot="end">
       <ion-button (click)="next()">Next <ion-icon slot="end" name="arrow-forward"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -48,6 +48,15 @@
           </ion-item>
           <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
             <p>Please enter a valid age.</p>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input formControlName="phoneNumber" type="number"
+              [class.invalid]="!slideOneForm.controls.phoneNumber.valid && (slideOneForm.controls.phoneNumber.dirty || submitAttempt)">
+            </ion-input>
+          </ion-item>
+          <ion-item *ngIf="!slideOneForm.controls.phoneNumber.valid  && (slideOneForm.controls.phoneNumber.dirty || submitAttempt)">
+            <p>Please enter a valid Phone Number.</p>
           </ion-item>
         </form>
       </ion-list>

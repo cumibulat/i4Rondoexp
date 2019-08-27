@@ -14,6 +14,7 @@ import {
 import {
   UsernameValidator
 } from '../validators/username';
+import { PhoneValidator } from '../validators/phone';
 
 @Component({
   selector: 'app-register',
@@ -38,7 +39,8 @@ export class RegisterPage implements OnInit {
     this.slideOneForm = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      age: ['', AgeValidator.isValid]
+      age: ['', AgeValidator.isValid],
+      phoneNumber: ['', PhoneValidator.isValid]
     });
 
     this.slideTwoForm = formBuilder.group({
