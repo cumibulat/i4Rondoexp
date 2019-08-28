@@ -23,11 +23,6 @@ export class MultiFileUploadComponent implements OnInit {
     this.hasBaseDropZoneOver = ev;
   }
 
-  reorderFiles(reorderEvent: CustomEvent): void {
-    let element = this.uploader.queue.splice(reorderEvent.detail.from, 1)[0];
-    this.uploader.queue.splice(reorderEvent.detail.to, 0, element);
-  }
-
   ngOnInit() {}
 
 }

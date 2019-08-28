@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ViewChild
 } from '@angular/core';
 import {
   Router,
@@ -29,6 +30,7 @@ import {
   CameraSource
 } from '@capacitor/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MultiFileUploadComponent } from '../components/multi-file-upload/multi-file-upload.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -43,6 +45,7 @@ export class UserDetailPage implements OnInit {
   deviceInfo: string;
   public formUserDetail: FormGroup;
   
+  @ViewChild(MultiFileUploadComponent, {static: false}) fileField: MultiFileUploadComponent;
 
   constructor(
     private route: ActivatedRoute,
@@ -62,6 +65,17 @@ export class UserDetailPage implements OnInit {
 
   saveUserDetail() {
     this.loadingSvc.present();
+
+    // code utk dapetin attachment dan gabungin ke form sebelum di submit ke backend
+    let files = this.fileField.getFiles();
+    console.log('cek ye isinya :: ', files);
+    // let formData = new FormData();
+    // formData.append('somekey', 'some value')
+
+    // files.forEach((file) => {
+    //   formData.append('files[]', file.rawFile, file.name);
+    // });
+
     if (this.userId > 0) {
       // edit mode
       this.userSvc.updateUser(this.userId, this.formUserDetail.value).subscribe(
