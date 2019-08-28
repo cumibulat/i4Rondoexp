@@ -21,29 +21,29 @@
 
     <ion-slide>
       <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
-      <ion-list lines="none">
+      <ion-list>
         <form [formGroup]="slideOneForm">
-          <ion-item>
+          <ion-item lines="full">
             <ion-label position="floating">First Name</ion-label>
             <ion-input formControlName="firstName" type="text"
               [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)">
             </ion-input>
-          </ion-item>
-          <ion-item
+          </ion-item >
+          <ion-item 
             *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
             <p>Please enter a valid name.</p>
           </ion-item>
-          <ion-item>
+          <ion-item lines="full">
             <ion-label position="floating">Last Name</ion-label>
             <ion-input formControlName="lastName" type="text"
               [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.age.dirty || submitAttempt)">
             </ion-input>
           </ion-item>
-          <ion-item
+          <ion-item 
             *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
             <p>Please enter a valid name.</p>
           </ion-item>
-          <ion-item>
+          <ion-item lines="full">
             <ion-label position="floating">Age</ion-label>
             <ion-input formControlName="age" type="number"
               [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)">
@@ -52,7 +52,7 @@
           <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
             <p>Please enter a valid age.</p>
           </ion-item>
-          <ion-item>
+          <ion-item lines="full">
             <ion-label position="floating">Phone Number</ion-label>
             <ion-input formControlName="phoneNumber" type="number"
               [class.invalid]="!slideOneForm.controls.phoneNumber.valid && (slideOneForm.controls.phoneNumber.dirty || submitAttempt)">
