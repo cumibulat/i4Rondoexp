@@ -12,9 +12,23 @@ import {
 import {
   UserService
 } from '../services/user.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PhoneValidator } from '../validators/phone';
-import { PopupnotifService } from '../services/popupnotif.service';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
+import {
+  PhoneValidator
+} from '../validators/phone';
+import {
+  PopupnotifService
+} from '../services/popupnotif.service';
+import {
+  Plugins,
+  CameraResultType,
+  CameraSource
+} from '@capacitor/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-detail',
@@ -25,7 +39,10 @@ export class UserDetailPage implements OnInit {
 
   userId: number;
   userDetail: any = {};
+  userAttachment: any;
+  deviceInfo: string;
   public formUserDetail: FormGroup;
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +50,8 @@ export class UserDetailPage implements OnInit {
     private loadingSvc: LoadingService,
     private userSvc: UserService,
     private formBuilder: FormBuilder,
-    private popup: PopupnotifService
+    private popup: PopupnotifService,
+    private sanitizer: DomSanitizer
   ) {
 
     this.formUserDetail = this.formBuilder.group({
@@ -44,7 +62,7 @@ export class UserDetailPage implements OnInit {
 
   saveUserDetail() {
     this.loadingSvc.present();
-    if(this.userId > 0){
+    if (this.userId > 0) {
       // edit mode
       this.userSvc.updateUser(this.userId, this.formUserDetail.value).subscribe(
         (resp) => {
@@ -64,7 +82,6 @@ export class UserDetailPage implements OnInit {
       );
     } else {
       // create new mode
-      console.log("masuk created.")
       this.userSvc.createUser(this.formUserDetail.value).subscribe(
         (resp) => {
           this.popup.show(
@@ -100,8 +117,32 @@ export class UserDetailPage implements OnInit {
     );
   }
 
+  async addAttachment() {
+    // if (deviceInfo.platform === "web") {
+    //   // web access 
+    // } else if (deviceInfo.platform === "android") {
+    //   //android smartphone access
+
+      const image = await Plugins.Camera.getPhoto({
+          quality: 100,
+          allowEditing: false,
+          resultType: CameraResultType.DataUrl,
+          source: CameraSource.Camera
+        })
+        .catch(() => {
+          console.log("cancel take photo");
+        });
+
+      this.userAttachment = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+    // }
+  }
+
   ionViewDidEnter() {
     this.userId = Number(this.route.snapshot.paramMap.get('id'));
+
+    Plugins.Device.getInfo().then((info) => {
+      this.deviceInfo = info.platform;
+    });
 
     if (this.userId > 0) {
       this.loadUserDetail();

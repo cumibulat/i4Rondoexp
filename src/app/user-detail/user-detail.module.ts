@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { UserDetailPage } from './user-detail.page';
+import { FileUploadModule } from 'ng2-file-upload';
+import { MultiFileUploadComponent } from '../components/multi-file-upload/multi-file-upload.component';
 
 const routes: Routes = [
   {
@@ -20,8 +22,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
+    FileUploadModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [UserDetailPage]
+  declarations: [UserDetailPage, MultiFileUploadComponent]
 })
 export class UserDetailPageModule {}

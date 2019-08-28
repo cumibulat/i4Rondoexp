@@ -68,11 +68,24 @@
             <ion-col>Your Kartu Keluarga</ion-col>
             <ion-col class="ion-text-right">Uploaded</ion-col>
           </ion-row>
+          <ion-row *ngIf="deviceInfo === 'web'">
+            <ion-col>Attachment
+              <br />
+              <app-multi-file-upload></app-multi-file-upload>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="deviceInfo === 'android'">
+            <ion-col>Attachment</ion-col>
+            <ion-col class="ion-text-right">
+              <ion-button color="tertiary" (click)="addAttachment()" expand="full">
+                Take Picture
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-grid>
       </ion-item>
     </ion-card>
   </form>
   <ion-button color="tertiary" (click)="saveUserDetail()" expand="full">Save</ion-button>
-
 
 </ion-content>
