@@ -29,6 +29,10 @@ export class Tab2Page {
     this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
 
+  doSubmit(){
+    console.log('masuk submit');
+  }
+
   ionViewWillEnter(){
     this.listShoppingCart = [
       {
